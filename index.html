@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travelitude AI Automation Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">T</div><div><strong>TRAVELITUDE</strong><span>AI AUTOMATION HUB</span></div></div>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav>
+        <button class="nav-item active" data-view="dashboard"><span>▦</span> Overview</button>
+        <button class="nav-item" data-view="products"><span>◈</span> Product Library <b id="navProductCount">24</b></button>
+        <button class="nav-item" data-view="automation"><span>✦</span> Automation Studio</button>
+        <button class="nav-item" data-view="insights"><span>◌</span> Performance Insights</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="help-card"><span>✦</span><div><strong>Automation is live</strong><p>AI engine is processing normally.</p></div></div><div class="user"><div class="avatar">AM</div><div><strong>Alex Morgan</strong><span>Content Manager</span></div><span class="dots">•••</span></div></div>
+    </aside>
+    <main>
+      <header><div><div class="eyebrow">MONDAY, 22 SEPTEMBER</div><h1 id="pageTitle">Good morning, Alex <span>✦</span></h1><p id="pageSubtitle">Here’s what your automation engine has been working on.</p></div><div class="header-actions"><button class="icon-button" aria-label="Notifications">♧<i></i></button><button class="outline-button" id="importButton">↥ Import product</button><button class="primary-button" id="newProductButton">+ New product</button></div></header>
+      <section id="dashboard" class="view active">
+        <div class="metrics-grid">
+          <article class="metric-card"><div class="metric-icon coral">◈</div><div><span>Total products</span><strong id="totalProducts">24</strong><small class="positive">↑ 12% <em>vs last month</em></small></div><div class="spark coral-line">╱╲╱╲╱</div></article>
+          <article class="metric-card"><div class="metric-icon violet">✦</div><div><span>AI content generated</span><strong id="contentCount">186</strong><small class="positive">↑ 28% <em>vs last month</em></small></div><div class="spark violet-line">╱╲╱╱╲</div></article>
+          <article class="metric-card"><div class="metric-icon mint">⌁</div><div><span>Hours automated</span><strong id="hoursSaved">47.5</strong><small class="positive">↑ 18% <em>vs last month</em></small></div><div class="spark mint-line">╱╱╲╱╲</div></article>
+          <article class="metric-card"><div class="metric-icon amber">◉</div><div><span>SEO health score</span><strong>92<span class="score">/100</span></strong><small class="positive">↑ 6 pts <em>vs last month</em></small><div class="progress"><i></i></div></article>
+        </div>
+        <div class="main-grid">
+          <section class="panel workflow-panel"><div class="panel-head"><div><span class="section-kicker">AUTOMATION PIPELINE</span><h2>Today’s workflow</h2></div><button class="text-button" id="runAllButton">Run all automations →</button></div><div class="pipeline" id="pipeline">
+            <div class="pipeline-step complete"><div class="step-icon">✓</div><strong>Ingest</strong><span>3 products</span></div><div class="connector complete"></div>
+            <div class="pipeline-step complete"><div class="step-icon">✓</div><strong>Classify</strong><span>3 products</span></div><div class="connector complete"></div>
+            <div class="pipeline-step running"><div class="step-icon">✦</div><strong>Generate</strong><span>2 of 3</span></div><div class="connector"></div>
+            <div class="pipeline-step"><div class="step-icon">⌕</div><strong>Optimise</strong><span>Queued</span></div>
+          </div><div class="automation-note"><span>✦</span><span><strong>AI is generating content</strong> for “Northern Lights Expedition”</span><span class="live-dot">LIVE</span></div></section>
+          <section class="panel activity-panel"><div class="panel-head"><div><span class="section-kicker">LIVE FEED</span><h2>Recent activity</h2></div><button class="more-button">•••</button></div><div class="activity-list" id="activityList"></div></section>
+        </div>
+        <div class="bottom-grid"><section class="panel products-panel"><div class="panel-head"><div><span class="section-kicker">PRODUCT LIBRARY</span><h2>Recently updated</h2></div><button class="text-button" data-go="products">View all products →</button></div><div id="recentProducts"></div></section><section class="panel opportunity-panel"><div class="panel-head"><div><span class="section-kicker">AI OPPORTUNITY</span><h2>Unlock more demand</h2></div><span class="badge">High impact</span></div><div class="opportunity-content"><div class="orb">✦</div><div><strong>Family travel is trending</strong><p>Create tailored packages for family travellers and surface them in your recommendations.</p><button class="small-primary" id="exploreButton">Explore opportunity →</button></div></div></section></div>
+      </section>
+      <section id="products" class="view"><div class="view-toolbar"><div class="search">⌕ <input id="productSearch" placeholder="Search products, destinations..." /></div><button class="filter-button">⚙ Filter</button></div><div class="library-head"><div><h2>Product library</h2><p>Enriched travel products ready for every customer moment.</p></div><div class="segmented"><button class="selected">All</button><button>Published</button><button>Drafts</button></div></div><div class="product-grid" id="productGrid"></div></section>
+      <section id="automation" class="view"><div class="studio-hero"><span class="section-kicker">AI WORKBENCH</span><h2>Automation studio</h2><p>Turn raw supplier information into travel-ready content in minutes.</p></div><div class="studio-grid"><section class="panel ingest-card"><div class="step-number">01</div><h3>Bring in a product</h3><p>Paste supplier data or choose a demo record to start the pipeline.</p><textarea id="productInput" placeholder="e.g. 7-night Kyoto & Osaka cultural tour, boutique hotels, private guide...">7-night Northern Lights Expedition in Tromsø. Boutique arctic lodge, husky safari, aurora photography guide and airport transfers. Best for couples and adventure seekers.</textarea><div class="ingest-actions"><button class="demo-button" id="loadSampleButton">Load sample</button><button class="primary-button" id="processButton">Process with AI ✦</button></div></section><section class="panel results-card"><div class="step-number">02</div><div class="result-title"><div><h3>AI output</h3><p id="outputState">Waiting for product data</p></div><span class="status-pill" id="outputStatus">READY</span></div><div id="aiOutput" class="empty-output"><div class="empty-star">✦</div><p>Your classified product, content and SEO recommendations will appear here.</p></div></section></div></section>
+      <section id="insights" class="view"><div class="insights-top"><div><span class="section-kicker">PERFORMANCE INSIGHTS</span><h2>Content that moves travellers</h2><p>See how automated product storytelling is improving discovery.</p></div><button class="outline-button" id="downloadReport">↓ Download report</button></div><div class="insight-cards"><article class="panel insight"><span>Search impressions</span><strong>48.2k</strong><small class="positive">↑ 31% this month</small><div class="bar-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article><article class="panel insight"><span>Content completion</span><strong>94%</strong><small>22 of 24 products fully optimised</small><div class="donut"><b>94%</b></div></article><article class="panel insight"><span>Recommendation click rate</span><strong>8.6%</strong><small class="positive">↑ 2.1 pts this month</small><div class="trend">↗</div></article></div><section class="panel insight-table"><div class="panel-head"><div><span class="section-kicker">TOP PERFORMERS</span><h2>Products gaining momentum</h2></div></div><div id="topProducts"></div></section></section>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal"><div class="modal"><button class="modal-close" id="modalClose">×</button><div class="modal-icon">✦</div><span class="section-kicker">NEW PRODUCT</span><h2>Add to automation queue</h2><p>Give your team a head start with a quick product brief.</p><input id="newProductName" placeholder="Product name" /><textarea id="newProductBrief" placeholder="Destination, experience, inclusions..."></textarea><button id="modalProcess" class="primary-button full">Create & process with AI</button></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
